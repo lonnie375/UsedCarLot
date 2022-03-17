@@ -28,7 +28,7 @@ namespace UsedCarLot
 
         public override string ToString()
 		{
-			return make + model + year + price;
+			return $"{make} {model} {year} ${price}.";
 		}
 	}
 }
