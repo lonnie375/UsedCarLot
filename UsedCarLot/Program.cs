@@ -18,7 +18,10 @@ new UsedCar("GC", "Witherell", 2016, 14450m, 3500.3)
 Console.WriteLine("Welcome to Grant Chirpus' Used Car Emporium!");
 //Print the list of cars
 
+Car test = new Car();
+Console.WriteLine(test.ToString());
 
+/*
 var count = 1; 
 
 foreach(var car in cars)
@@ -28,6 +31,7 @@ foreach(var car in cars)
 }
 Console.WriteLine($"{count++}. Add");
 Console.WriteLine($"{count++}. Quit"); 
+*/
 
 Console.Write("Which car would you like? ");
 string userInput = (Console.ReadLine());
