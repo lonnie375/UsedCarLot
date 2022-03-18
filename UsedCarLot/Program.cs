@@ -17,34 +17,148 @@ new UsedCar("GC", "Witherell", 2016, 14450m, 3500.3)
 
 Console.WriteLine("Welcome to Grant Chirpus' Used Car Emporium!");
 //Print the list of cars
-
-var count = 1; 
-
-foreach(var car in cars)
-{
-    Console.WriteLine($"{count}. {car}");
-    count++; 
-}
-Console.WriteLine($"{count++}. Add");
-Console.WriteLine($"{count++}. Quit"); 
-
-
-Console.Write("Which car would you like? ");
-string userInput = (Console.ReadLine());
-int userChoice;
-bool userTest = int.TryParse(userInput, out userChoice);
-
-//Confirms that the user enters an integer 
-if (userTest)
+bool choice = true;
+do
 {
 
-}
-else
-{
-    Console.WriteLine("Please enter a number next to the car you want to purchase: "); 
-}
 
-//Produce the car based on the number the user selects 
+    var count = 1;
+
+    foreach (var car in cars)
+    {
+        Console.WriteLine($"{count}. {car}");
+        count++;
+
+    }
+
+    Console.WriteLine($"Add");
+    //string userQuit = Console.ReadLine();
+    Console.WriteLine($"Quit");
+    //string userAdd = Console.ReadLine();
+
+    /*
+    if (userAdd == "y")
+    {
+        Console.WriteLine("Please provide the make: ");
+        string userMake = Console.ReadLine();
+        Console.WriteLine("Please provide the model: ");
+        string userModel = Console.ReadLine();
+        Console.WriteLine("Please provide the year: ");
+        string userYear = Console.ReadLine();
+        int year;
+        bool user = int.TryParse(userYear, out year);
+        Console.WriteLine("Please provide the price: ");
+        string userPrice = Console.ReadLine();
+        decimal price;
+        bool usersPrice = decimal.TryParse(userPrice, out price);
+
+        Car userNewCar = new Car(userMake, userModel, year, price);
+        cars.Add(userNewCar);
+
+        var counter = 1;
+        foreach (var car in cars)
+        {
+            Console.WriteLine($"{counter}. {car}");
+            counter++;
+        }
+   
+    }
+    */
+        /*
+        if (userQuit == "y")
+        {
+            Console.WriteLine("Good bye!");
+            break;
+        }
+        else if (userQuit == "n")
+        {
+
+        }
+        */
+        Console.Write("Which car would you like? ");
+        string userInput = (Console.ReadLine());
+        int userChoice;
+        bool userTest = int.TryParse(userInput, out userChoice);
+
+        //Produce the car based on the number the user selects 
+        if (userChoice == 1)
+        {
+            Console.WriteLine(cars[0]);
+
+        }
+        else if (userChoice == 2)
+        {
+            Console.WriteLine(cars[1]);
+        }
+        else if (userChoice == 3)
+        {
+            Console.WriteLine(cars[2]);
+        }
+        else if (userChoice == 4)
+        {
+            Console.WriteLine(cars[3]);
+        }
+        else if (userChoice == 5)
+        {
+            Console.WriteLine(cars[4]);
+        }
+        else if (userChoice == 6)
+        {
+            Console.WriteLine(cars[5]);
+        }
+        else if (userInput == "Add")
+        {
+    Console.WriteLine("Please provide the make: ");
+    string userMake = Console.ReadLine();
+    Console.WriteLine("Please provide the model: ");
+    string userModel = Console.ReadLine();
+    Console.WriteLine("Please provide the year: ");
+    string userYear = Console.ReadLine();
+    int year;
+    bool user = int.TryParse(userYear, out year);
+    Console.WriteLine("Please provide the price: ");
+    string userPrice = Console.ReadLine();
+    decimal price;
+    bool usersPrice = decimal.TryParse(userPrice, out price);
+
+    Car userNewCar = new Car(userMake, userModel, year, price);
+    cars.Add(userNewCar);
+
+    var counter = 1;
+    foreach (var car in cars)
+    {
+        Console.WriteLine($"{counter}. {car}");
+        counter++;
+    }
+}
+        else if (userInput == "Quit")
+        {
+            Console.WriteLine("Good bye!");
+            break;
+        }
+        else
+        {
+           
+        }
+
+        Console.Write("Would you like to buy it (y/n)? ");
+        string userPurchase = Console.ReadLine();
+
+        if (userPurchase == "y")
+        {
+            Console.WriteLine("Excellent!  Our finance department will be in touch shortly!");
+            cars.RemoveAt(userChoice - 1);
+            //remove 
+        }
+        else
+        {
+            //continue;
+        }
+    } while (choice == true);
+
+
+
+
 
 
 
